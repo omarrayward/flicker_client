@@ -1,0 +1,147 @@
+h1 {
+    color: #555;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+#image-list-container {
+    margin: 0 auto;
+    width:90%;
+}
+
+.image-container {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 291px;
+    margin-bottom: -4px; /* reverse inline-block marging given by browser */
+    padding: 0 3% 3% 0px;
+    position: relative;
+    width: 33%;
+}
+
+.image-container:nth-child(3n) {
+    padding-right: 0px;
+}
+
+.image {
+    background-size: cover;
+    cursor: pointer;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.image .tooltiptext {
+    background-color: rgba(120, 120, 120, 0.5);
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #fff;
+    padding: 5px;
+    text-align: left;
+    visibility: hidden;
+    width: 100%;
+
+    /* Position the tooltip */
+    bottom: 0px;
+    position: absolute;
+    z-index: 1;
+}
+
+.image:hover .tooltiptext {
+    visibility: visible;
+}
+
+.tooltiptext > span {
+    display: inline-block;
+}
+
+#image-list-container .material-icons , #image-toggler .material-icons{
+    cursor: pointer;
+    font-size: 34px;
+    z-index: 2;
+}
+
+#image-list-container .material-icons {
+    position: absolute;
+    right: 40px;
+    top: 10px;
+}
+
+#image-toggler .material-icons{
+    position: fixed;
+    left: 6px;
+}
+
+.favorite{
+    color: rgba(255, 0, 0, 0.7);
+}
+
+
+.favorite-border{
+    color: rgba(255, 0, 0, 0.4);
+}
+
+#loading-spinner {
+    color: #555;
+    font-size: 30px;
+    text-align: center;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1
+    }
+    50% {
+        opacity: 0
+    }
+}
+
+.ellipsis > span {
+    animation: blink 0.7s infinite;
+}
+.ellipsis > span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+.ellipsis > span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+@media (max-width: 800px) {
+    .image-container {
+        height: 250px;
+    }
+    .tooltiptext {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 620px) {
+    .image-container {
+        height: 150px;
+        padding: 0 1% 1% 0px;
+    }
+
+    .image {
+        cursor: default;
+    }
+
+    .image:hover .tooltiptext {
+        visibility: hidden;
+    }
+
+
+    #image-list-container .material-icons , #image-toggler .material-icons{
+        font-size: 24px;
+    }
+
+    #image-list-container .material-icons {
+        right: 15px;
+        top: 5px;
+    }
+
+    #image-toggler .material-icons{
+        left: 4px;
+        position: fixed;
+    }
+}
+
